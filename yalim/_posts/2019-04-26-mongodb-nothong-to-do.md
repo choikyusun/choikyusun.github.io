@@ -1,13 +1,9 @@
 ---
 layout: post
-title: YaLim
-description: >
-author: author2
-noindex: true
+title: 리눅스 mongodb 설치중 Nothing to do 을 만났을때
+description: > 
 ---
-
-
-# 리눅스 mongodb 설치중 Nothing to do 을 만났을때
+ㅤㅤ
 
 ### 1.yum 으로 mongodb install
 ~~~yml
@@ -31,7 +27,7 @@ enabled=1
 gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
 ~~~
 
-###. 3. yum 실행
+### 3.yum 실행
 ~~~yml
 파일 작성 후에 
 sudo yum install mongodb-org
