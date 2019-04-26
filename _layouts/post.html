@@ -1,37 +1,34 @@
 ---
-layout: default
+# Copyright (c) 2018 Florian Klampfer <https://qwtel.com/>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+layout: base
 ---
-<main class="content" role="main">
-    <article class="post single-post" itemscope itemtype="http://schema.org/BlogPosting">
 
-        <header class="post-header short-diver">
-            <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-            <section class="post-meta">
-                <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
-                on
-                {% for tag in page.tags limit:5 %}
-                <span>{{ tag }}</span>
-                {% endfor %}
-            </section>
-        </header>
+{% include components/post.html post=page no_link_title=true no_excerpt=true hide_image=page.hide_image %}
 
-        <section class="post-content short-diver" itemprop="articleBody">
-            {{content}}
-        </section>
+<hr class="dingbat related" />
 
-        <footer class="post-footer">
-            {% include authorinfo.html param=page.author %}
-        </footer>
-
-        {% if page.comments %}
-    		<div class="comments">
-    			<a href="javascript:;" class="view-comments"><i class="fa fa-comments"></i>View Comments...</a>
-    			<div id="disqus_thread"></div>
-    		</div>
-    		{% endif %}
-
-    </article>
-</main>
-
-{% include photoswipe.html %}
-{% include post_scripts.html %}
+{% assign addons = page.addons | default:site.hydejack.post_addons %}
+{% unless addons %}{% assign addons = "about,newsletter,related,random" | split:"," %}{% endunless %}
+{% for addon in addons %}
+  {% case addon %}
+  {% when 'about' %}
+     {% include components/about.html %}
+  {% when 'related' %}
+    {% include components/related-posts.html post=post %}
+  {% else %}
+  {% endcase %}
+{% endfor %}

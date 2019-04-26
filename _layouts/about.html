@@ -1,74 +1,43 @@
 ---
-layout: headless
+# Copyright (c) 2018 Florian Klampfer <https://qwtel.com/>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+layout: base
 ---
-{% if site.data.authors and site.data.authors[page.author] %}
-{% assign author = site.data.authors[page.author] %}
-{% elsif site.data.authors %}
-{% assign author = site.data.authors[0] %}
-{% endif %}
 
-{% assign counter = 0 %}
-{% for post in site.posts %}
-    {% unless post.draft or post.author != author.initial %}
-        {% assign counter = counter | plus: 1 %}
-    {% endunless %}
-{% endfor %}
+<article class="page" role="article">
+  {% if content contains "<!--author-->" %}
+    {% assign plugins = site.plugins | default:site.gems %}
+    {% assign author = site.data.authors[page.author] | default:site.data.authors.first[1] | default:site.author %}
+    {% capture author_x %}
+      {% if author.picture %}
+        {% include components/hy-img.html class="avatar" img=author.picture alt=author.name %}
+      {% elsif plugins contains 'jekyll-avatar' %}
+        {% assign avatar = author.social.github | default:author.github.username | default:author.github %}
+        {% include components/avatar-tag.html user=avatar %}
+      {% endif %}
 
-<a href="{{ "/" | absolute_url }}" class="logo-readium"><span class="logo">{{ author.initial | slice: 0, 2 | downcase }}</span></a>
+      {{ author.about | markdownify }}
+    {% endcapture %}
+    {% assign content = content | replace:"<!--author-->", author_x %}
+  {% endif %}
 
-<section class="author-profile" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    {%  if author.cover %}
-    <div class="author-cover image-bg" style="background-image: url('{{author.cover | absolute_url }}')"></div>
-    {% endif %}
+  <header>
+    <h1 class="page-title">{{ page.title }}</h1>
+    {% include components/message.html text=page.description hide=page.hide_description %}
+  </header>
 
-    {%  if author.picture %}
-    <figure class="author-image  {%  if author.cover %} has-cover  {% endif %}">
-        <div class="img image-bg" style="background-image: url({{author.picture | absolute_url }})">
-            <a class="hidden" href="{{author.picture | absolute_url }}" itemprop="image">{{author.name}}'s Picture</a>
-        </div>
-    </figure>
-    {% endif %}
-
-    <div class="author-info">
-        <h1 class="author-title" itemprop="name">{{author.name}}</h1>
-        {% if author.bio %} <h2 class="author-bio" itemprop="description">{{author.bio}}</h2> {% endif %}
-
-        <div class="author-meta">
-            {%  if author.email %}<a href="mailto:{{ author.email }}" itemprop="email" class="icon-mail">Mail</a>{% endif %}
-
-            {%  if author.twitter %}<a href="https://twitter.com/{{ author.twitter }}" itemprop="sameAs" class="icon-twitter">Twitter</a> {% endif %}
-            {%  if author.linkedin %}<a href="https://www.linkedin.com/in/{{ author.linkedin }}" itemprop="sameAs" class="icon-linkedin">LinkedIn</a> {% endif %}
-            {%  if author.xing %}<a href="https://www.xing.com/profile/{{ author.xing }}" itemprop="sameAs" class="icon-xing">Xing</a> {% endif %}
-
-            {%  if author.github %}<a href="https://github.com/{{ author.github }}" itemprop="sameAs" class="icon-github">GitHub</a> {% endif %}
-            {%  if author.stackoverflow %}<a href="http://stackoverflow.com/users/{{ author.stackoverflow }}" itemprop="sameAs" class="icon-stackoverflow">StackOverflow</a> {% endif %}
-
-            {%  if author.facebook %}<a href="https://www.facebook.com/{{ author.facebook }}" itemprop="sameAs" class="icon-facebook">Facebook</a> {% endif %}
-            {%  if author.gplus %}<a href="https://plus.google.com/+{{ author.gplus }}" itemprop="sameAs" class="icon-google-plus">Google+</a> {% endif %}
-
-            {%  if author.soundcloud %}<a href="https://soundcloud.com/{{ author.soundcloud }}" itemprop="sameAs" class="icon-soundcloud">Soundcloud</a> {% endif %}
-            {%  if author.youtube %}<a href="https://www.youtube.com/user/{{ author.youtube }}" itemprop="sameAs" class="icon-youtube">YouTube</a> {% endif %}
-            {%  if author.spotify %}<a href="https://open.spotify.com/user/{{ author.spotify }}" itemprop="sameAs" class="icon-spotify">Spotify</a> {% endif %}
-            {%  if author.twitch %}<a href="https://www.twitch.tv/{{ author.twitch }}" itemprop="sameAs" class="icon-twitch">Twitch</a> {% endif %}
-
-            {%  if author.pinterest %}<a href="https://www.pinterest.com/{{ author.pinterest }}" itemprop="sameAs" class="icon-pinterest">Pinterest</a> {% endif %}
-            {%  if author.dribble %}<a href="https://dribbble.com/{{ author.dribble }}" itemprop="sameAs" class="icon-dribbble">Dribble</a> {% endif %}
-            {%  if author.behance %}<a href="https://www.behance.net/{{ author.behance }}" itemprop="sameAs" class="icon-behance">Behance</a> {% endif %}  
-            {%  if author.s500px %}<a href="https://500px.com/{{ author.s500px }}" itemprop="sameAs" class="icon-500px">500px</a> {% endif %}
-            {%  if author.reddit %}<a href="https://de.reddit.com/user/{{ author.reddit }}" itemprop="sameAs" class="icon-reddit">Reddit</a> {% endif %}
-        </div>                                   
-    </div>                                       
-</section>                                       
-                                                 
-<main class="content" role="main">               
-    <article class="single-post">                
-                                                 
-        <section class="post-content">           
-            {{content}}                          
-        </section>
-
-    </article>
-</main>
-
-{% include photoswipe.html %}
-{% include post_scripts.html %}
+  {{ content }}
+</article>
