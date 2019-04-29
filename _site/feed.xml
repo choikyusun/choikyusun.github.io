@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-04-29T17:20:46+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">YaLim</title><subtitle>YaLim The power to change the world.
+</subtitle><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><entry><title type="html">Intellij 메모리 설정</title><link href="http://localhost:4000/yalim/2019-04-29-Intellij-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%84%A4%EC%A0%95/" rel="alternate" type="text/html" title="Intellij 메모리 설정" /><published>2019-04-29T00:00:00+09:00</published><updated>2019-04-29T00:00:00+09:00</updated><id>http://localhost:4000/yalim/Intellij-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%84%A4%EC%A0%95</id><content type="html" xml:base="http://localhost:4000/yalim/2019-04-29-Intellij-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%84%A4%EC%A0%95/">&lt;p&gt;여러개의 Intellij 를 띄우다보면 메모리 부족으로 인하여 Intellij 가 죽는 경우가 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;intellij-메모리-설정&quot;&gt;Intellij 메모리 설정&lt;/h3&gt;
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;mac의 경우 /Applications/IntelliJ IDEA 3.app/Contents/bin 위치에(인텔리제이 버전에 따라 다를수 있음.)&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;idea.vmoptions가 있는데, 이걸 열어서 맨 위의 값을 바꿔주면 된다.&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;-Xms1024m&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;-Xmx2048m&lt;/span&gt; 
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><summary type="html">여러개의 Intellij 를 띄우다보면 메모리 부족으로 인하여 Intellij 가 죽는 경우가 있다.</summary></entry><entry><title type="html">이메일 체크는 어떻게 하여야하나.</title><link href="http://localhost:4000/yalim/2019-04-29-%EC%9D%B4%EB%A9%94%EC%9D%BC%EC%B2%B4%ED%81%AC/" rel="alternate" type="text/html" title="이메일 체크는 어떻게 하여야하나." /><published>2019-04-29T00:00:00+09:00</published><updated>2019-04-29T00:00:00+09:00</updated><id>http://localhost:4000/yalim/%EC%9D%B4%EB%A9%94%EC%9D%BC%EC%B2%B4%ED%81%AC</id><content type="html" xml:base="http://localhost:4000/yalim/2019-04-29-%EC%9D%B4%EB%A9%94%EC%9D%BC%EC%B2%B4%ED%81%AC/">&lt;p&gt;이메일을 자주 보내는 사이트의 경우 유효하지 않은 이메일에 대하여 지속적인 메일 발송을 하는경우 문제가 종종발생한다.
+이런 경우 어떻게 처리해야 합리적일까?.&lt;/p&gt;
+
+&lt;h3 id=&quot;1유효성-검사로-이메일-형식-확인&quot;&gt;1.유효성 검사로 이메일 형식 확인&lt;/h3&gt;
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;이메일 형식의 정규식(경우에 따라 정규식이 다를수 있음)&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;2이메일이-유효한지-확인-해주는-사이트-이용&quot;&gt;2.이메일이 유효한지 확인 해주는 사이트 이용&lt;/h3&gt;
+
+&lt;h3 id=&quot;3실제로-이메일-보내기&quot;&gt;3.실제로 이메일 보내기&lt;/h3&gt;
+
+&lt;h3 id=&quot;4실제로-이메일-발송을-하였으나-실패하는-경우라면&quot;&gt;4.실제로 이메일 발송을 하였으나 실패하는 경우라면?&lt;/h3&gt;
+
+&lt;h3 id=&quot;5실패-이력을-쌓고-다시-안보내도록-처리&quot;&gt;5.실패 이력을 쌓고 다시 안보내도록 처리&lt;/h3&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><summary type="html">이메일을 자주 보내는 사이트의 경우 유효하지 않은 이메일에 대하여 지속적인 메일 발송을 하는경우 문제가 종종발생한다. 이런 경우 어떻게 처리해야 합리적일까?.</summary></entry><entry><title type="html">리눅스 mongodb 설치중 Nothing to do 을 만났을때</title><link href="http://localhost:4000/yalim/2019-04-26-mongodb-nothong-to-do/" rel="alternate" type="text/html" title="리눅스 mongodb 설치중 Nothing to do 을 만났을때" /><published>2019-04-26T00:00:00+09:00</published><updated>2019-04-26T00:00:00+09:00</updated><id>http://localhost:4000/yalim/mongodb-nothong-to-do</id><content type="html" xml:base="http://localhost:4000/yalim/2019-04-26-mongodb-nothong-to-do/">&lt;p&gt;ㅤㅤ&lt;/p&gt;
+
+&lt;h3 id=&quot;1yum-으로-mongodb-install&quot;&gt;1.yum 으로 mongodb install&lt;/h3&gt;
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ sudo yum install mongodb-org&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;Loaded plugins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;priorities, update-motd, upgrade-helper&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;No package mongodb-org available.&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Nothing to do&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;2nothing-to-do-발생하는-경우&quot;&gt;2.Nothing to do 발생하는 경우&lt;/h3&gt;
+
+&lt;p&gt;이때는 repo 파일을 만들어줍니다.
+파일명은 /etc/yum.repos.d/mongodb-org-3.4.repo 이고 내용은 다음과 같습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;mongodb-org-3.4&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;name=MongoDB Repository&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;baseurl=https://repo.mongodb.org/yum/amazon/2013.03/mongodb-org/3.4/x86_64/&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;gpgcheck=1&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;enabled=1&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;3yum-실행&quot;&gt;3.yum 실행&lt;/h3&gt;
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;파일 작성 후에&lt;/span&gt; 
+&lt;span class=&quot;s&quot;&gt;sudo yum install mongodb-org&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><summary type="html">ㅤㅤ</summary></entry><entry><title type="html">jekyllthemes 적용 방법</title><link href="http://localhost:4000/yalim/2019-04-24-%ED%85%8C%EB%A7%88%EC%A0%81%EC%9A%A9/" rel="alternate" type="text/html" title="jekyllthemes 적용 방법" /><published>2019-04-24T00:00:00+09:00</published><updated>2019-04-24T00:00:00+09:00</updated><id>http://localhost:4000/yalim/%ED%85%8C%EB%A7%88%EC%A0%81%EC%9A%A9</id><content type="html" xml:base="http://localhost:4000/yalim/2019-04-24-%ED%85%8C%EB%A7%88%EC%A0%81%EC%9A%A9/">&lt;p&gt;ㅤㅤ&lt;/p&gt;
+
+&lt;h3 id=&quot;1httpjekyllthemesorg-으로-이동하여-맘에-드는-테마를-고른다&quot;&gt;1.&lt;a href=&quot;http://jekyllthemes.org&quot;&gt;http://jekyllthemes.org&lt;/a&gt; 으로 이동하여 맘에 드는 테마를 고른다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/20180426/1.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-소스를-내려-받는다-되도록-gemfile-파일이있는-것으로-하자&quot;&gt;2. 소스를 내려 받는다. 되도록 Gemfile 파일이있는 것으로 하자.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/20180426/2.png&quot; alt=&quot;logo&quot; /&gt;
+&lt;img src=&quot;/assets/img/post/20180426/3.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;http://jekyllthemes.org&lt;/span&gt;  
+&lt;span class=&quot;s&quot;&gt;bundle install&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;bundle exec jekyll serve&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><summary type="html">ㅤㅤ</summary></entry></feed>
