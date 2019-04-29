@@ -1,7 +1,7 @@
 ---
 layout: list
-title: Hyde
-slug: hyde
+title: YaLim
+slug: YaLim
 menu: true
 order: 1
 description: >
