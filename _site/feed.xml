@@ -1,5 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-04-30T08:13:47+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">YaLim</title><subtitle>The power to change the world.
-</subtitle><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><entry><title type="html">Intellij 메모리 설정</title><link href="http://localhost:4000/yalim/2019-04-29-Intellij-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%84%A4%EC%A0%95/" rel="alternate" type="text/html" title="Intellij 메모리 설정" /><published>2019-04-29T00:00:00+09:00</published><updated>2019-04-29T00:00:00+09:00</updated><id>http://localhost:4000/yalim/Intellij-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%84%A4%EC%A0%95</id><content type="html" xml:base="http://localhost:4000/yalim/2019-04-29-Intellij-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%84%A4%EC%A0%95/">&lt;p&gt;여러개의 Intellij 를 띄우다보면 메모리 부족으로 인하여 Intellij 가 죽는 경우가 있다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-04-30T10:08:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">YaLim</title><subtitle>The power to change the world.
+</subtitle><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><entry><title type="html">mongodb 설치하기</title><link href="http://localhost:4000/yalim/2019-04-30-mongo-start/" rel="alternate" type="text/html" title="mongodb 설치하기" /><published>2019-04-30T00:00:00+09:00</published><updated>2019-04-30T00:00:00+09:00</updated><id>http://localhost:4000/yalim/mongo-start</id><content type="html" xml:base="http://localhost:4000/yalim/2019-04-30-mongo-start/">&lt;p&gt;mongodb 설치하기&lt;/p&gt;
+
+&lt;h3 id=&quot;1yum-으로-mongodb-install&quot;&gt;1.yum 으로 mongodb install&lt;/h3&gt;
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ sudo yum install mongodb-org&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;Loaded plugins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;priorities, update-motd, upgrade-helper&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;No package mongodb-org available.&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Nothing to do&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;2nothing-to-do-발생하는-경우&quot;&gt;2.Nothing to do 발생하는 경우&lt;/h3&gt;
+
+&lt;p&gt;이때는 repo 파일을 만들어줍니다.
+파일명은 /etc/yum.repos.d/mongodb-org-3.4.repo 이고 내용은 다음과 같습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;mongodb-org-3.4&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;name=MongoDB Repository&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;baseurl=https://repo.mongodb.org/yum/amazon/2013.03/mongodb-org/3.4/x86_64/&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;gpgcheck=1&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;enabled=1&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;3yum-실행&quot;&gt;3.yum 실행&lt;/h3&gt;
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;파일 작성 후에&lt;/span&gt; 
+&lt;span class=&quot;s&quot;&gt;sudo yum install mongodb-org&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;4db-생성&quot;&gt;4.db 생성&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;사용 선언으로 없으면 만든다.
+use xxxxxx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;5document-생성&quot;&gt;5.document 생성&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;선언과 동시에 생성된다.
+db.book.insert({&quot;name&quot;: &quot;MongoDB Tutorial&quot;, &quot;author&quot;: &quot;velopert&quot;});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><summary type="html">mongodb 설치하기</summary></entry><entry><title type="html">Intellij 메모리 설정</title><link href="http://localhost:4000/yalim/2019-04-29-Intellij-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%84%A4%EC%A0%95/" rel="alternate" type="text/html" title="Intellij 메모리 설정" /><published>2019-04-29T00:00:00+09:00</published><updated>2019-04-29T00:00:00+09:00</updated><id>http://localhost:4000/yalim/Intellij-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%84%A4%EC%A0%95</id><content type="html" xml:base="http://localhost:4000/yalim/2019-04-29-Intellij-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%84%A4%EC%A0%95/">&lt;p&gt;여러개의 Intellij 를 띄우다보면 메모리 부족으로 인하여 Intellij 가 죽는 경우가 있다.&lt;/p&gt;
 
 &lt;h3 id=&quot;intellij-메모리-설정&quot;&gt;Intellij 메모리 설정&lt;/h3&gt;
 &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;mac의 경우 /Applications/IntelliJ IDEA 3.app/Contents/bin 위치에(인텔리제이 버전에 따라 다를수 있음.)&lt;/span&gt;
