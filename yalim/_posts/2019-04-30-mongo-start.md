@@ -1,10 +1,10 @@
 ---
 layout: post
-title: mongodb 설치하기
+title: mongodb 시작하기
 description: > 
 ---
 
-mongodb 설치하기
+mongodb 시작하기
 
 ### 1.yum 으로 mongodb install
 ~~~yml
