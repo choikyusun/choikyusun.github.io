@@ -1,5 +1,125 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-04-30T10:10:42+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">YaLim</title><subtitle>The power to change the world.
-</subtitle><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><entry><title type="html">mongodb 시작하기</title><link href="http://localhost:4000/yalim/2019-04-30-mongo-start/" rel="alternate" type="text/html" title="mongodb 시작하기" /><published>2019-04-30T00:00:00+09:00</published><updated>2019-04-30T00:00:00+09:00</updated><id>http://localhost:4000/yalim/mongo-start</id><content type="html" xml:base="http://localhost:4000/yalim/2019-04-30-mongo-start/">&lt;p&gt;mongodb 시작하기&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-05-08T18:58:09+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">YaLim</title><subtitle>The power to change the world.
+</subtitle><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><entry><title type="html">mariadb 유저 생성 권한 부여</title><link href="http://localhost:4000/yalim/2019-05-08-mariadb/" rel="alternate" type="text/html" title="mariadb 유저 생성 권한 부여" /><published>2019-05-08T00:00:00+09:00</published><updated>2019-05-08T00:00:00+09:00</updated><id>http://localhost:4000/yalim/mariadb</id><content type="html" xml:base="http://localhost:4000/yalim/2019-05-08-mariadb/">&lt;p&gt;mariadb 유저 생성 권한 부여&lt;/p&gt;
+
+&lt;h3 id=&quot;출처--httpssehoonoverflowtistorycom6&quot;&gt;출처 : &lt;a href=&quot;https://sehoonoverflow.tistory.com/6&quot;&gt;https://sehoonoverflow.tistory.com/6&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3 id=&quot;데이터-베이스-확인&quot;&gt;데이터 베이스 확인&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# show databases;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;데이터베이스-사용&quot;&gt;데이터베이스 사용&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# use 데이터베이스명
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;사용자-확인&quot;&gt;사용자 확인&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# select host, user, password from user;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;유저-생성&quot;&gt;유저 생성&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# create user '계정아이디'@'접속위치' identified by '패스워드';
+ex. create user 'user1'@'%' identified by 'user!@#$';
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;권한-주기&quot;&gt;권한 주기&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# grant all privileges on DB이름.테이블 to '계정아이디'@'접속위치';
+ex. grant all privileges on testDB.* to 'user1'@'localhost';            
+    //localhost 는 내부에서만 접속가능
+grant select on testDB.* to 'user1'@'%';
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;권한-확인&quot;&gt;권한 확인&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# show grants for 'user1'@'접속위치';
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;계정-삭제&quot;&gt;계정 삭제&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# drop user '계정아이디'@'접속위치';
+ex. drop user 'user1'@'%';
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><summary type="html">mariadb 유저 생성 권한 부여</summary></entry><entry><title type="html">junit5</title><link href="http://localhost:4000/yalim/2019-04-30-junit5/" rel="alternate" type="text/html" title="junit5" /><published>2019-04-30T00:00:00+09:00</published><updated>2019-04-30T00:00:00+09:00</updated><id>http://localhost:4000/yalim/junit5</id><content type="html" xml:base="http://localhost:4000/yalim/2019-04-30-junit5/">&lt;p&gt;junit5 시작하기&lt;/p&gt;
+
+&lt;h3 id=&quot;가이드-문서-httpsjunitorgjunit5docscurrentuser-guide&quot;&gt;가이드 문서 &lt;a href=&quot;https://junit.org/junit5/docs/current/user-guide/&quot;&gt;https://junit.org/junit5/docs/current/user-guide/&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3 id=&quot;test&quot;&gt;@Test&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Denotes that a method is a test method. Unlike JUnit 4’s @Test annotation, 
+this annotation does not declare any attributes, 
+since test extensions in JUnit Jupiter operate based on their own dedicated annotations. 
+Such methods are inherited unless they are overridden.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;parameterizedtest&quot;&gt;@ParameterizedTest&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Denotes that a method is a parameterized test. 
+Such methods are inherited unless they are overridden.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;repeatedtest&quot;&gt;@RepeatedTest&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Denotes that a method is a test template for a repeated test. 
+Such methods are inherited unless they are overridden.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;testfactory&quot;&gt;@TestFactory&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Denotes that a method is a test factory for dynamic tests. 
+Such methods are inherited unless they are overridden.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;testtemplate&quot;&gt;@TestTemplate&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Denotes that a method is a template for test cases designed to be invoked 
+multiple times depending on the number of invocation contexts returned by
+the registered providers. Such methods are inherited unless they are overridden.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;testmethodorder&quot;&gt;@TestMethodOrder&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Used to configure the test method execution order for the annotated 
+test class; similar to JUnit 4’s @FixMethodOrder. Such annotations are inherited.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;testinstance&quot;&gt;@TestInstance&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Used to configure the test instance lifecycle for the annotated test class. 
+Such annotations are inherited.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;displayname&quot;&gt;@DisplayName&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Declares a custom display name for the test class or test method. 
+Such annotations are not inherited.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;displaynamegeneration&quot;&gt;@DisplayNameGeneration&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Declares a custom display name generator for the test class. 
+Such annotations are inherited.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;beforeeach&quot;&gt;@BeforeEach&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Denotes that the annotated method should be executed before each 
+@Test, @RepeatedTest, @ParameterizedTest, or @TestFactory method in the current class; 
+analogous to JUnit 4’s @Before. Such methods are inherited unless they are overridden.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;aftereach&quot;&gt;@AfterEach&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Denotes that the annotated method should be executed after each 
+@Test, @RepeatedTest, @ParameterizedTest, or @TestFactory method in the current class; 
+analogous to JUnit 4’s @After. Such methods are inherited unless they are overridden.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;beforeall&quot;&gt;@BeforeAll&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Denotes that the annotated method should be executed before all 
+@Test, @RepeatedTest, @ParameterizedTest, and @TestFactory methods in the current class; 
+analogous to JUnit 4’s @BeforeClass. Such methods are inherited (unless they are hidden or overridden) 
+and must be static (unless the &quot;per-class&quot; test instance lifecycle is used).
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;afterall&quot;&gt;@AfterAll&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Denotes that the annotated method should be executed after all 
+@Test, @RepeatedTest, @ParameterizedTest, and @TestFactory methods in the current class; 
+analogous to JUnit 4’s @AfterClass. Such methods are inherited (unless they are hidden or overridden) 
+and must be static (unless the &quot;per-class&quot; test instance lifecycle is used).
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;nested&quot;&gt;@Nested&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Denotes that the annotated class is a non-static nested test class. 
+@BeforeAll and @AfterAll methods cannot be used directly in a 
+@Nested test class unless the &quot;per-class&quot; test instance lifecycle is used. 
+Such annotations are not inherited.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;tag&quot;&gt;@Tag&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Used to declare tags for filtering tests, either at the class or method level; 
+analogous to test groups in TestNG or Categories in JUnit 4.
+Such annotations are inherited at the class level but not at the method level.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;disabled&quot;&gt;@Disabled&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Used to disable a test class or test method; analogous to JUnit 4’s @Ignore. 
+Such annotations are not inherited.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;extendwith&quot;&gt;@ExtendWith&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Used to register extensions declaratively. Such annotations are inherited.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;registerextension&quot;&gt;@RegisterExtension&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Used to register extensions programmatically via fields. 
+Such fields are inherited unless they are shadowed.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;tempdir&quot;&gt;@TempDir&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Used to supply a temporary directory via field injection or parameter 
+injection in a lifecycle method or test method; located in the org.junit.jupiter.api.io package.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><summary type="html">junit5 시작하기</summary></entry><entry><title type="html">mongodb 시작하기</title><link href="http://localhost:4000/yalim/2019-04-30-mongo-start/" rel="alternate" type="text/html" title="mongodb 시작하기" /><published>2019-04-30T00:00:00+09:00</published><updated>2019-04-30T00:00:00+09:00</updated><id>http://localhost:4000/yalim/mongo-start</id><content type="html" xml:base="http://localhost:4000/yalim/2019-04-30-mongo-start/">&lt;p&gt;mongodb 시작하기&lt;/p&gt;
 
 &lt;h3 id=&quot;1yum-으로-mongodb-install&quot;&gt;1.yum 으로 mongodb install&lt;/h3&gt;
 &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ sudo yum install mongodb-org&lt;/span&gt;
