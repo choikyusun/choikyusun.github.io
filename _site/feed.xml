@@ -1,5 +1,80 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-05-08T18:58:09+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">YaLim</title><subtitle>The power to change the world.
-</subtitle><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><entry><title type="html">mariadb 유저 생성 권한 부여</title><link href="http://localhost:4000/yalim/2019-05-08-mariadb/" rel="alternate" type="text/html" title="mariadb 유저 생성 권한 부여" /><published>2019-05-08T00:00:00+09:00</published><updated>2019-05-08T00:00:00+09:00</updated><id>http://localhost:4000/yalim/mariadb</id><content type="html" xml:base="http://localhost:4000/yalim/2019-05-08-mariadb/">&lt;p&gt;mariadb 유저 생성 권한 부여&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-05-10T15:33:38+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">YaLim</title><subtitle>The power to change the world.
+</subtitle><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><entry><title type="html">리눅스에 서비스 등록하기 (내부 톰켓 jar)</title><link href="http://localhost:4000/yalim/2019-05-09-%EB%A6%AC%EB%88%85%EC%8A%A4-%EC%84%9C%EB%B9%84%EC%8A%A4%EB%93%B1%EB%A1%9D/" rel="alternate" type="text/html" title="리눅스에 서비스 등록하기 (내부 톰켓 jar)" /><published>2019-05-09T00:00:00+09:00</published><updated>2019-05-09T00:00:00+09:00</updated><id>http://localhost:4000/yalim/%EB%A6%AC%EB%88%85%EC%8A%A4-%EC%84%9C%EB%B9%84%EC%8A%A4%EB%93%B1%EB%A1%9D</id><content type="html" xml:base="http://localhost:4000/yalim/2019-05-09-%EB%A6%AC%EB%88%85%EC%8A%A4-%EC%84%9C%EB%B9%84%EC%8A%A4%EB%93%B1%EB%A1%9D/">&lt;p&gt;리눅스에 서비스 등록하기&lt;/p&gt;
+
+&lt;h3 id=&quot;기본적인-내부-톰켓-사용-jar-실행-방법&quot;&gt;기본적인 내부 톰켓 사용 jar 실행 방법&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# java -jar xxx.jar 
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;옵션을-주어-jar-실행-방법&quot;&gt;옵션을 주어 jar 실행 방법&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# java -jar -server -Xms4096m -Xmx4096m -Dfile.encoding=UTF-8 ... xxx.jar 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;etcinitdxxx-등록하여-사용하는-방법&quot;&gt;/etc/init.d/xxx 등록하여 사용하는 방법&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# cd /etc/init.d/
+# vi xxx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;아래 내용 기입&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/sh&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;SERVICE_NAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;xxx
+&lt;span class=&quot;nv&quot;&gt;PATH_TO_JAR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/DATA/WEB/remoteseminar/webapps/xxx.jar
+&lt;span class=&quot;nv&quot;&gt;PID_PATH_NAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/tmp/xxx-pid
+&lt;span class=&quot;nv&quot;&gt;JAVA_OPTS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;-Xmx4G&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;JAVA_OPTS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$JAVA_OPTS&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; -Dspring.config.location=classpath:/application.properties&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;RUN_ARGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;--server.port=8081&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;LOG_FOLDER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/tmp/logs&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in
+    &lt;/span&gt;start&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Starting &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$SERVICE_NAME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; ...&quot;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$PID_PATH_NAME&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then
+            &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nohup &lt;/span&gt;java &lt;span class=&quot;nv&quot;&gt;$JAVA_OPTS&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-jar&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$PATH_TO_JAR&lt;/span&gt; /tmp 2&amp;gt;&amp;gt; /dev/null &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; /dev/null &amp;amp;
+                        &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$!&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$PID_PATH_NAME&lt;/span&gt;
+            &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$SERVICE_NAME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; started ...&quot;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else
+            &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$SERVICE_NAME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; is already running ...&quot;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+    stop&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$PID_PATH_NAME&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then
+            &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$PID_PATH_NAME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$SERVICE_NAME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; stoping ...&quot;&lt;/span&gt;
+            &lt;span class=&quot;nb&quot;&gt;kill&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$PID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$SERVICE_NAME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; stopped ...&quot;&lt;/span&gt;
+            &lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$PID_PATH_NAME&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else
+            &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$SERVICE_NAME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; is not running ...&quot;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+    restart&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$PID_PATH_NAME&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then
+            &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$PID_PATH_NAME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$SERVICE_NAME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; stopping ...&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;nb&quot;&gt;kill&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$PID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$SERVICE_NAME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; stopped ...&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$PID_PATH_NAME&lt;/span&gt;
+            &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$SERVICE_NAME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; starting ...&quot;&lt;/span&gt;
+            &lt;span class=&quot;nb&quot;&gt;nohup &lt;/span&gt;java &lt;span class=&quot;nv&quot;&gt;$JAVA_OPTS&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-jar&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$PATH_TO_JAR&lt;/span&gt; /tmp 2&amp;gt;&amp;gt; /dev/null &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; /dev/null &amp;amp;
+                        &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$!&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$PID_PATH_NAME&lt;/span&gt;
+            &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$SERVICE_NAME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; started ...&quot;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else
+            &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$SERVICE_NAME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; is not running ...&quot;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;esac&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;간략-설명&quot;&gt;간략 설명&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SERVICE_NAME : 프로세스 명 
+PATH_TO_JAR : 실행 jar 파일 위치 
+PID_PATH_NAME : pid 위치 경로  
+JAVA_OPTS : 실행시 필요한 자바 옵션 
+RUN_ARGS : 실행시 필요한 변수 
+LOG_FOLDER : 로그 파일 위치
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;실행-및-정지&quot;&gt;실행 및 정지&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# /etc/init.d/xxx start
+# /etc/init.d/xxx stop
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><summary type="html">리눅스에 서비스 등록하기</summary></entry><entry><title type="html">mariadb 유저 생성 권한 부여</title><link href="http://localhost:4000/yalim/2019-05-08-mariadb/" rel="alternate" type="text/html" title="mariadb 유저 생성 권한 부여" /><published>2019-05-08T00:00:00+09:00</published><updated>2019-05-08T00:00:00+09:00</updated><id>http://localhost:4000/yalim/mariadb</id><content type="html" xml:base="http://localhost:4000/yalim/2019-05-08-mariadb/">&lt;p&gt;mariadb 유저 생성 권한 부여&lt;/p&gt;
 
 &lt;h3 id=&quot;출처--httpssehoonoverflowtistorycom6&quot;&gt;출처 : &lt;a href=&quot;https://sehoonoverflow.tistory.com/6&quot;&gt;https://sehoonoverflow.tistory.com/6&lt;/a&gt;&lt;/h3&gt;
 
