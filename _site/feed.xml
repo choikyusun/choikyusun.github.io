@@ -1,5 +1,60 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-05-10T15:33:38+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">YaLim</title><subtitle>The power to change the world.
-</subtitle><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><entry><title type="html">리눅스에 서비스 등록하기 (내부 톰켓 jar)</title><link href="http://localhost:4000/yalim/2019-05-09-%EB%A6%AC%EB%88%85%EC%8A%A4-%EC%84%9C%EB%B9%84%EC%8A%A4%EB%93%B1%EB%A1%9D/" rel="alternate" type="text/html" title="리눅스에 서비스 등록하기 (내부 톰켓 jar)" /><published>2019-05-09T00:00:00+09:00</published><updated>2019-05-09T00:00:00+09:00</updated><id>http://localhost:4000/yalim/%EB%A6%AC%EB%88%85%EC%8A%A4-%EC%84%9C%EB%B9%84%EC%8A%A4%EB%93%B1%EB%A1%9D</id><content type="html" xml:base="http://localhost:4000/yalim/2019-05-09-%EB%A6%AC%EB%88%85%EC%8A%A4-%EC%84%9C%EB%B9%84%EC%8A%A4%EB%93%B1%EB%A1%9D/">&lt;p&gt;리눅스에 서비스 등록하기&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-05-20T08:33:05+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">YaLim</title><subtitle>The power to change the world.
+</subtitle><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><entry><title type="html">운영서버 배포에 대한 나의 생각</title><link href="http://localhost:4000/think/2019-05-10-%EC%9A%B4%EC%98%81%EB%B0%B0%ED%8F%AC%EC%97%90-%EB%8C%80%ED%95%9C%EC%83%9D%EA%B0%81/" rel="alternate" type="text/html" title="운영서버 배포에 대한 나의 생각" /><published>2019-05-10T00:00:00+09:00</published><updated>2019-05-10T00:00:00+09:00</updated><id>http://localhost:4000/think/%EC%9A%B4%EC%98%81%EB%B0%B0%ED%8F%AC%EC%97%90-%EB%8C%80%ED%95%9C%EC%83%9D%EA%B0%81</id><content type="html" xml:base="http://localhost:4000/think/2019-05-10-%EC%9A%B4%EC%98%81%EB%B0%B0%ED%8F%AC%EC%97%90-%EB%8C%80%ED%95%9C%EC%83%9D%EA%B0%81/">&lt;p&gt;운영 배포에 대한 생각&lt;/p&gt;
+
+&lt;h2 id=&quot;운영서버-배포에-대한-나의-생각&quot;&gt;운영서버 배포에 대한 나의 생각&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1.안전 하게 배포가 되어야한다. 
+2.배포된 소스에 대한 신뢰가 있어야한다.
+3.롤백이 간편하여야한다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;1안전하게-배포-되어야한다&quot;&gt;1.안전하게 배포 되어야한다.&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;배포를 하다가 실패하는 경우가 종종 있었다. 
+배포 실패 원인을 분석하고 해결해야한다. 
+이런 상황은 빈번하였으며 문제는 배포 파일의 용량이 커서 도중에 실패하는 경우였다.
+배포 실패의 가능성을 염두하고 있는 나지만 실제로 배포 하다 실패하는경우를 마주하게되면...
+진땀이 나고.. 긴장을 하게된다. 
+
+이러한 문제는 자동화에 대한 완벽한 지식이없다면 오히려 자동화가 실패하였을 경우 
+불필요한 작업자의 긴장감만 과중되어 업데이트를 진행함에 있어 불안한 시간의 연속이된다.
+
+이를 해결하기 위해서는 반자동화를 사용해야할지도 모른다.
+때로는 무식한 방법이 확실한 방법이 된다. 
+
+현재 나의 시스템에서는 자동화 배포 되신 ansible을 활용하여 미리 소스를 위치한 후 
+와스를 내린 상태에서 기존의 소스와 교체를 해주고 있다. 
+
+배포를 하다 실패하는 경우는 없어야한다. 
+불필요한 작업자의 긴장감만 가중시킬 뿐이다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;2배포된-소스에-대한-신뢰가-있어야한다&quot;&gt;2.배포된 소스에 대한 신뢰가 있어야한다.&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;배포된 소스가 테스트가 완료된 내용인지에 대한 확신이있어야한다. 
+이는 당연한 이야기다.
+이를위해서 빌드 버전, 빌드시간등을 기록한 파일을 직접 확인하여 안도의 한숨을 쉰다.
+
+작업자는 항상 확신을 가져아한다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;3롤백은-간편해야한다&quot;&gt;3.롤백은 간편해야한다.&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;배포 후 최종 테스트 혹은 엄데이트 완료 후 문제가 발생된다면 이전 업데이트 전으로 소스를 롤백해야한다.
+롤백을 손쉽게 해야하는데 ... 
+롤백을 쉽게 하지 못한다면 다시한번 긴장의 연속이 되겠다. 
+롤백을 한 후에도 확신으 가져야한다. 
+이전과 머라도 하나 변한게 없는지 확신을 갖아야하는데 소스 뿐 아니라 관련된 프로퍼티, 파일 등등
+모든게 이전의 상태로 돌아가야한다. 
+사실 롤백의 경험이 없기 때문에 운영상의 업데이트가 실패하는 경험도 있어야 한다고 생각한다.
+최악의 경우에 대한 대비가 되어있다면 좋을테니 말이다. 
+
+롤백은 간편해야한다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;결론&quot;&gt;결론&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;방법의 차이는 분명 존재한다. 
+직접 하는 사람이 배포를 함에 있어서 불안감을 갖을 필요는 없다고 생각한다.
+자동화는 편리하다. 하지만 자동화를 이용할 땐 적어도 원리와 오류에 대한 지식이 뒷받힘 되어야한다.
+때로는 가장 무식한 방법이 가장 확실한 방법이 된다. 
+결정은 작업자의 몫 무엇이 옳고 그름은 없다고 생각한다. 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><summary type="html">운영 배포에 대한 생각</summary></entry><entry><title type="html">리눅스에 서비스 등록하기 (내부 톰켓 jar)</title><link href="http://localhost:4000/yalim/2019-05-09-%EB%A6%AC%EB%88%85%EC%8A%A4-%EC%84%9C%EB%B9%84%EC%8A%A4%EB%93%B1%EB%A1%9D/" rel="alternate" type="text/html" title="리눅스에 서비스 등록하기 (내부 톰켓 jar)" /><published>2019-05-09T00:00:00+09:00</published><updated>2019-05-09T00:00:00+09:00</updated><id>http://localhost:4000/yalim/%EB%A6%AC%EB%88%85%EC%8A%A4-%EC%84%9C%EB%B9%84%EC%8A%A4%EB%93%B1%EB%A1%9D</id><content type="html" xml:base="http://localhost:4000/yalim/2019-05-09-%EB%A6%AC%EB%88%85%EC%8A%A4-%EC%84%9C%EB%B9%84%EC%8A%A4%EB%93%B1%EB%A1%9D/">&lt;p&gt;리눅스에 서비스 등록하기&lt;/p&gt;
 
 &lt;h3 id=&quot;기본적인-내부-톰켓-사용-jar-실행-방법&quot;&gt;기본적인 내부 톰켓 사용 jar 실행 방법&lt;/h3&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# java -jar xxx.jar 
@@ -104,7 +159,42 @@ grant select on testDB.* to 'user1'@'%';
 &lt;h3 id=&quot;계정-삭제&quot;&gt;계정 삭제&lt;/h3&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# drop user '계정아이디'@'접속위치';
 ex. drop user 'user1'@'%';
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><summary type="html">mariadb 유저 생성 권한 부여</summary></entry><entry><title type="html">junit5</title><link href="http://localhost:4000/yalim/2019-04-30-junit5/" rel="alternate" type="text/html" title="junit5" /><published>2019-04-30T00:00:00+09:00</published><updated>2019-04-30T00:00:00+09:00</updated><id>http://localhost:4000/yalim/junit5</id><content type="html" xml:base="http://localhost:4000/yalim/2019-04-30-junit5/">&lt;p&gt;junit5 시작하기&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><summary type="html">mariadb 유저 생성 권한 부여</summary></entry><entry><title type="html">mongodb 시작하기</title><link href="http://localhost:4000/yalim/2019-04-30-mongo-start/" rel="alternate" type="text/html" title="mongodb 시작하기" /><published>2019-04-30T00:00:00+09:00</published><updated>2019-04-30T00:00:00+09:00</updated><id>http://localhost:4000/yalim/mongo-start</id><content type="html" xml:base="http://localhost:4000/yalim/2019-04-30-mongo-start/">&lt;p&gt;mongodb 시작하기&lt;/p&gt;
+
+&lt;h3 id=&quot;1yum-으로-mongodb-install&quot;&gt;1.yum 으로 mongodb install&lt;/h3&gt;
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ sudo yum install mongodb-org&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;Loaded plugins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;priorities, update-motd, upgrade-helper&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;No package mongodb-org available.&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Nothing to do&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;2nothing-to-do-발생하는-경우&quot;&gt;2.Nothing to do 발생하는 경우&lt;/h3&gt;
+
+&lt;p&gt;이때는 repo 파일을 만들어줍니다.
+파일명은 /etc/yum.repos.d/mongodb-org-3.4.repo 이고 내용은 다음과 같습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;mongodb-org-3.4&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;name=MongoDB Repository&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;baseurl=https://repo.mongodb.org/yum/amazon/2013.03/mongodb-org/3.4/x86_64/&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;gpgcheck=1&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;enabled=1&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;3yum-실행&quot;&gt;3.yum 실행&lt;/h3&gt;
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;파일 작성 후에&lt;/span&gt; 
+&lt;span class=&quot;s&quot;&gt;sudo yum install mongodb-org&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;4db-생성&quot;&gt;4.db 생성&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;사용 선언으로 없으면 만든다.
+use xxxxxx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;5document-생성&quot;&gt;5.document 생성&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;선언과 동시에 생성된다.
+db.book.insert({&quot;name&quot;: &quot;MongoDB Tutorial&quot;, &quot;author&quot;: &quot;velopert&quot;});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><summary type="html">mongodb 시작하기</summary></entry><entry><title type="html">junit5</title><link href="http://localhost:4000/yalim/2019-04-30-junit5/" rel="alternate" type="text/html" title="junit5" /><published>2019-04-30T00:00:00+09:00</published><updated>2019-04-30T00:00:00+09:00</updated><id>http://localhost:4000/yalim/junit5</id><content type="html" xml:base="http://localhost:4000/yalim/2019-04-30-junit5/">&lt;p&gt;junit5 시작하기&lt;/p&gt;
 
 &lt;h3 id=&quot;가이드-문서-httpsjunitorgjunit5docscurrentuser-guide&quot;&gt;가이드 문서 &lt;a href=&quot;https://junit.org/junit5/docs/current/user-guide/&quot;&gt;https://junit.org/junit5/docs/current/user-guide/&lt;/a&gt;&lt;/h3&gt;
 
@@ -194,51 +284,7 @@ Such fields are inherited unless they are shadowed.
 &lt;h3 id=&quot;tempdir&quot;&gt;@TempDir&lt;/h3&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Used to supply a temporary directory via field injection or parameter 
 injection in a lifecycle method or test method; located in the org.junit.jupiter.api.io package.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><summary type="html">junit5 시작하기</summary></entry><entry><title type="html">mongodb 시작하기</title><link href="http://localhost:4000/yalim/2019-04-30-mongo-start/" rel="alternate" type="text/html" title="mongodb 시작하기" /><published>2019-04-30T00:00:00+09:00</published><updated>2019-04-30T00:00:00+09:00</updated><id>http://localhost:4000/yalim/mongo-start</id><content type="html" xml:base="http://localhost:4000/yalim/2019-04-30-mongo-start/">&lt;p&gt;mongodb 시작하기&lt;/p&gt;
-
-&lt;h3 id=&quot;1yum-으로-mongodb-install&quot;&gt;1.yum 으로 mongodb install&lt;/h3&gt;
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ sudo yum install mongodb-org&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;Loaded plugins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;priorities, update-motd, upgrade-helper&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;No package mongodb-org available.&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Nothing to do&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;2nothing-to-do-발생하는-경우&quot;&gt;2.Nothing to do 발생하는 경우&lt;/h3&gt;
-
-&lt;p&gt;이때는 repo 파일을 만들어줍니다.
-파일명은 /etc/yum.repos.d/mongodb-org-3.4.repo 이고 내용은 다음과 같습니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;mongodb-org-3.4&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;name=MongoDB Repository&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;baseurl=https://repo.mongodb.org/yum/amazon/2013.03/mongodb-org/3.4/x86_64/&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;gpgcheck=1&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;enabled=1&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;3yum-실행&quot;&gt;3.yum 실행&lt;/h3&gt;
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;파일 작성 후에&lt;/span&gt; 
-&lt;span class=&quot;s&quot;&gt;sudo yum install mongodb-org&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;4db-생성&quot;&gt;4.db 생성&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;사용 선언으로 없으면 만든다.
-use xxxxxx
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;5document-생성&quot;&gt;5.document 생성&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;선언과 동시에 생성된다.
-db.book.insert({&quot;name&quot;: &quot;MongoDB Tutorial&quot;, &quot;author&quot;: &quot;velopert&quot;});
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><summary type="html">mongodb 시작하기</summary></entry><entry><title type="html">Intellij 메모리 설정</title><link href="http://localhost:4000/yalim/2019-04-29-Intellij-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%84%A4%EC%A0%95/" rel="alternate" type="text/html" title="Intellij 메모리 설정" /><published>2019-04-29T00:00:00+09:00</published><updated>2019-04-29T00:00:00+09:00</updated><id>http://localhost:4000/yalim/Intellij-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%84%A4%EC%A0%95</id><content type="html" xml:base="http://localhost:4000/yalim/2019-04-29-Intellij-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%84%A4%EC%A0%95/">&lt;p&gt;여러개의 Intellij 를 띄우다보면 메모리 부족으로 인하여 Intellij 가 죽는 경우가 있다.&lt;/p&gt;
-
-&lt;h3 id=&quot;intellij-메모리-설정&quot;&gt;Intellij 메모리 설정&lt;/h3&gt;
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;mac의 경우 /Applications/IntelliJ IDEA 3.app/Contents/bin 위치에(인텔리제이 버전에 따라 다를수 있음.)&lt;/span&gt;
-
-&lt;span class=&quot;s&quot;&gt;idea.vmoptions가 있는데, 이걸 열어서 맨 위의 값을 바꿔주면 된다.&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;-Xms1024m&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;-Xmx2048m&lt;/span&gt; 
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><summary type="html">여러개의 Intellij 를 띄우다보면 메모리 부족으로 인하여 Intellij 가 죽는 경우가 있다.</summary></entry><entry><title type="html">이메일 체크는 어떻게 하여야하나.</title><link href="http://localhost:4000/yalim/2019-04-29-%EC%9D%B4%EB%A9%94%EC%9D%BC%EC%B2%B4%ED%81%AC/" rel="alternate" type="text/html" title="이메일 체크는 어떻게 하여야하나." /><published>2019-04-29T00:00:00+09:00</published><updated>2019-04-29T00:00:00+09:00</updated><id>http://localhost:4000/yalim/%EC%9D%B4%EB%A9%94%EC%9D%BC%EC%B2%B4%ED%81%AC</id><content type="html" xml:base="http://localhost:4000/yalim/2019-04-29-%EC%9D%B4%EB%A9%94%EC%9D%BC%EC%B2%B4%ED%81%AC/">&lt;p&gt;이메일을 자주 보내는 사이트의 경우 유효하지 않은 이메일에 대하여 지속적인 메일 발송을 하는경우 문제가 종종발생한다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><summary type="html">junit5 시작하기</summary></entry><entry><title type="html">이메일 체크는 어떻게 하여야하나.</title><link href="http://localhost:4000/yalim/2019-04-29-%EC%9D%B4%EB%A9%94%EC%9D%BC%EC%B2%B4%ED%81%AC/" rel="alternate" type="text/html" title="이메일 체크는 어떻게 하여야하나." /><published>2019-04-29T00:00:00+09:00</published><updated>2019-04-29T00:00:00+09:00</updated><id>http://localhost:4000/yalim/%EC%9D%B4%EB%A9%94%EC%9D%BC%EC%B2%B4%ED%81%AC</id><content type="html" xml:base="http://localhost:4000/yalim/2019-04-29-%EC%9D%B4%EB%A9%94%EC%9D%BC%EC%B2%B4%ED%81%AC/">&lt;p&gt;이메일을 자주 보내는 사이트의 경우 유효하지 않은 이메일에 대하여 지속적인 메일 발송을 하는경우 문제가 종종발생한다.
 이런 경우 어떻게 처리해야 합리적일까?.&lt;/p&gt;
 
 &lt;h3 id=&quot;1유효성-검사로-이메일-형식-확인&quot;&gt;1.유효성 검사로 이메일 형식 확인&lt;/h3&gt;
@@ -252,7 +298,16 @@ db.book.insert({&quot;name&quot;: &quot;MongoDB Tutorial&quot;, &quot;author&quo
 
 &lt;h3 id=&quot;4실제로-이메일-발송을-하였으나-실패하는-경우라면&quot;&gt;4.실제로 이메일 발송을 하였으나 실패하는 경우라면?&lt;/h3&gt;
 
-&lt;h3 id=&quot;5실패-이력을-쌓고-다시-안보내도록-처리&quot;&gt;5.실패 이력을 쌓고 다시 안보내도록 처리&lt;/h3&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><summary type="html">이메일을 자주 보내는 사이트의 경우 유효하지 않은 이메일에 대하여 지속적인 메일 발송을 하는경우 문제가 종종발생한다. 이런 경우 어떻게 처리해야 합리적일까?.</summary></entry><entry><title type="html">리눅스 mongodb 설치중 Nothing to do 을 만났을때</title><link href="http://localhost:4000/yalim/2019-04-26-mongodb-nothong-to-do/" rel="alternate" type="text/html" title="리눅스 mongodb 설치중 Nothing to do 을 만났을때" /><published>2019-04-26T00:00:00+09:00</published><updated>2019-04-26T00:00:00+09:00</updated><id>http://localhost:4000/yalim/mongodb-nothong-to-do</id><content type="html" xml:base="http://localhost:4000/yalim/2019-04-26-mongodb-nothong-to-do/">&lt;p&gt;ㅤㅤ&lt;/p&gt;
+&lt;h3 id=&quot;5실패-이력을-쌓고-다시-안보내도록-처리&quot;&gt;5.실패 이력을 쌓고 다시 안보내도록 처리&lt;/h3&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><summary type="html">이메일을 자주 보내는 사이트의 경우 유효하지 않은 이메일에 대하여 지속적인 메일 발송을 하는경우 문제가 종종발생한다. 이런 경우 어떻게 처리해야 합리적일까?.</summary></entry><entry><title type="html">Intellij 메모리 설정</title><link href="http://localhost:4000/yalim/2019-04-29-Intellij-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%84%A4%EC%A0%95/" rel="alternate" type="text/html" title="Intellij 메모리 설정" /><published>2019-04-29T00:00:00+09:00</published><updated>2019-04-29T00:00:00+09:00</updated><id>http://localhost:4000/yalim/Intellij-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%84%A4%EC%A0%95</id><content type="html" xml:base="http://localhost:4000/yalim/2019-04-29-Intellij-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%84%A4%EC%A0%95/">&lt;p&gt;여러개의 Intellij 를 띄우다보면 메모리 부족으로 인하여 Intellij 가 죽는 경우가 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;intellij-메모리-설정&quot;&gt;Intellij 메모리 설정&lt;/h3&gt;
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;mac의 경우 /Applications/IntelliJ IDEA 3.app/Contents/bin 위치에(인텔리제이 버전에 따라 다를수 있음.)&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;idea.vmoptions가 있는데, 이걸 열어서 맨 위의 값을 바꿔주면 된다.&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;-Xms1024m&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;-Xmx2048m&lt;/span&gt; 
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><summary type="html">여러개의 Intellij 를 띄우다보면 메모리 부족으로 인하여 Intellij 가 죽는 경우가 있다.</summary></entry><entry><title type="html">리눅스 mongodb 설치중 Nothing to do 을 만났을때</title><link href="http://localhost:4000/yalim/2019-04-26-mongodb-nothong-to-do/" rel="alternate" type="text/html" title="리눅스 mongodb 설치중 Nothing to do 을 만났을때" /><published>2019-04-26T00:00:00+09:00</published><updated>2019-04-26T00:00:00+09:00</updated><id>http://localhost:4000/yalim/mongodb-nothong-to-do</id><content type="html" xml:base="http://localhost:4000/yalim/2019-04-26-mongodb-nothong-to-do/">&lt;p&gt;ㅤㅤ&lt;/p&gt;
 
 &lt;h3 id=&quot;1yum-으로-mongodb-install&quot;&gt;1.yum 으로 mongodb install&lt;/h3&gt;
 &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;$ sudo yum install mongodb-org&lt;/span&gt;
