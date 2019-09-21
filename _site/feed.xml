@@ -1,100 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-09-19T07:54:19+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">YaLim</title><subtitle>The power to change the world.
-</subtitle><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><entry><title type="html">모바일 디버깅 개발 (charles -&amp;gt;java, php, app)</title><link href="http://localhost:4000/yalim/2019-09-18-charles/" rel="alternate" type="text/html" title="모바일 디버깅 개발 (charles -&amp;gt;java, php, app)" /><published>2019-09-18T00:00:00+09:00</published><updated>2019-09-18T00:00:00+09:00</updated><id>http://localhost:4000/yalim/charles</id><content type="html" xml:base="http://localhost:4000/yalim/2019-09-18-charles/">&lt;h3 id=&quot;1charles-설치-및-세팅&quot;&gt;1.charles 설치 및 세팅&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://www.charlesproxy.com/ 에서 설치 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20190918/1.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2019-09-22T00:54:05+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">YaLim</title><subtitle>The power to change the world.
+</subtitle><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><entry><title type="html">파이선 실행시 인자값 받아 실행하기</title><link href="http://localhost:4000/yalim/2019-09-22-%ED%8C%8C%EC%9D%B4%EC%84%A0-%EC%9D%B8%EC%9E%90%EA%B0%92-%EB%B0%9B%EC%95%84-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="파이선 실행시 인자값 받아 실행하기" /><published>2019-09-22T00:00:00+09:00</published><updated>2019-09-22T00:00:00+09:00</updated><id>http://localhost:4000/yalim/%ED%8C%8C%EC%9D%B4%EC%84%A0-%EC%9D%B8%EC%9E%90%EA%B0%92-%EB%B0%9B%EC%95%84-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/yalim/2019-09-22-%ED%8C%8C%EC%9D%B4%EC%84%A0-%EC%9D%B8%EC%9E%90%EA%B0%92-%EB%B0%9B%EC%95%84-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/">&lt;p&gt;인자값 받아 실행하기&lt;/p&gt;
 
-&lt;h3 id=&quot;2인증서-설치&quot;&gt;2.인증서 설치&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;charles 실행 → help 메뉴 (아래 그림 참고)2.인증서 설치
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20190918/2.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;testpy-내용&quot;&gt;Test.py 내용&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import sys
 
-&lt;h3 id=&quot;3다운로드된-인증서-항상-신뢰로-변경&quot;&gt;3.다운로드된 인증서 항상 신뢰로 변경&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;맥 → 키체인 접근 → 로그인 (아래 그림 참고)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20190918/3.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
+print(&quot;sys.argv length : &quot;, len(sys.argv))
+for arg in sys.argv:
+    print(&quot;arg -&amp;gt; &quot;, arg)
 
-&lt;h3 id=&quot;4charles-proxy-환경-구성&quot;&gt;4.charles proxy 환경 구성&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ssl proxy 세팅을 해준다.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20190918/4.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20190918/5.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;5charles-proxy-정보-확인&quot;&gt;5.charles proxy 정보 확인&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20190918/6.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20190918/7.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;6모바일-wifi-proxy-구성&quot;&gt;6.모바일 wifi proxy 구성&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wifi → 프록시 구성 → 수동 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20190918/8.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;7모바일에-인증서-설치-아이폰만-해당&quot;&gt;7.모바일에 인증서 설치 (아이폰만 해당)&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;chls.pro/ssl 의 주소를 웹브라우저에 쳐서 다운로드 
-설정 → 프로파일이 다운로드됨 메뉴 선택 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20190918/9.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20190918/10.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20190918/11.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;8설치된-인증서-신뢰-하기-아이폰만-해당&quot;&gt;8.설치된 인증서 신뢰 하기 (아이폰만 해당)&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;설정 → 정보 → 인증서 신뢰 메뉴로 이동하여 비활성화 된 부분을 활성화고 바꿔줘야 한다.
- 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20190918/12.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;모바일에서 하는 모든 내용이 charles proxy 를 타게 되고 모니터링이 된다.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20190918/13.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;9모바일-무신사-앱-디버깅-하기&quot;&gt;9.모바일 무신사 앱 디버깅 하기&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://git.musinsa.com/projects/APP/repos/appdeploy/browse 으로 이동하여 디버그를 다운로드 한다.
+print(sys.argv[2]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20190918/14.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;10호스트-서버-설정&quot;&gt;10.호스트 서버 설정&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;무신사 앱 실행 → 설정 메뉴로 이동(아래그림 참조)
-프록시 설정을 먼저 해제 하여야 아래 그림의 메뉴로 이동이 가능하다. 설정 후에 앱을 다시 켜야하고 그 전에 프록시 설정을 해줘야 한다.
+&lt;h3 id=&quot;실행-방법&quot;&gt;실행 방법&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python Test01.py aaa bbb
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20190918/15.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20190918/16.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;11php-디버깅&quot;&gt;11.php 디버깅&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;lm.store.musinsa.com 으로 들어오기 때문에 host 파일에 해당 도메인도 추가해주면 로컬 가상머신의 php 로 요청이 들어오게 된다.
-하지만 xdebug 를 위해서는 url 뒤에 ?XDEBUG_SESSION_START=PHPSTORM 파라미터를 붙여 주어야 로컬의 php 소스내에 디버깅이 잡힌다.
-url 부분의 파라미터를 변경해주어야 한다.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20190918/17.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20190918/18.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20190918/19.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;위의 그림처럼 설정 후에 다시 요청 하면 아래 그림처럼 php xdebug가 가능해진다.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20190918/20.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;12java-디버깅&quot;&gt;12.java 디버깅&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;기존의 php 소스를 java 변환함에 따라 도메인과 url 이 변경된 상황에서의 디버깅이 필요하다.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20190918/21.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;위의 처럼 변경해 주면 요청 신규 개발중인 java로 디버깅이 가능해 진다.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20190918/22.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;위의 요청 url 변경 해주는 charles Map Remote  기능은 아래 그림의 메뉴에 위치 하며
-동일한 기능을 서로 다른 요청을 번경해줘야 하는 현 상황에서는 php 쪽과 java 쪽을 등록하여 원하는 설정값을 켜고 끌수 있다.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20190918/23.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20190918/24.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/20190918/25.png&quot; alt=&quot;logo&quot; /&gt;&lt;/p&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><summary type="html">모바일 디버깅 개발 (charles -&amp;gt;java, php, app) 1.charles 설치 및 세팅 https://www.charlesproxy.com/ 에서 설치 </summary></entry><entry><title type="html">운영서버 배포에 대한 나의 생각</title><link href="http://localhost:4000/think/2019-05-10-%EC%9A%B4%EC%98%81%EB%B0%B0%ED%8F%AC%EC%97%90-%EB%8C%80%ED%95%9C%EC%83%9D%EA%B0%81/" rel="alternate" type="text/html" title="운영서버 배포에 대한 나의 생각" /><published>2019-05-10T00:00:00+09:00</published><updated>2019-05-10T00:00:00+09:00</updated><id>http://localhost:4000/think/%EC%9A%B4%EC%98%81%EB%B0%B0%ED%8F%AC%EC%97%90-%EB%8C%80%ED%95%9C%EC%83%9D%EA%B0%81</id><content type="html" xml:base="http://localhost:4000/think/2019-05-10-%EC%9A%B4%EC%98%81%EB%B0%B0%ED%8F%AC%EC%97%90-%EB%8C%80%ED%95%9C%EC%83%9D%EA%B0%81/">&lt;p&gt;운영 배포에 대한 생각&lt;/p&gt;
+&lt;h3 id=&quot;실행-결과&quot;&gt;실행 결과&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;('sys.argv length : ', 3)
+('arg -&amp;gt; ', 'Test01.py')
+('arg -&amp;gt; ', 'aaa')
+('arg -&amp;gt; ', 'bbb')
+bbb
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>&lt;firstname&gt; &lt;lastname&gt;</name><email>&lt;mail@domain.tld&gt;</email></author><summary type="html">인자값 받아 실행하기</summary></entry><entry><title type="html">운영서버 배포에 대한 나의 생각</title><link href="http://localhost:4000/think/2019-05-10-%EC%9A%B4%EC%98%81%EB%B0%B0%ED%8F%AC%EC%97%90-%EB%8C%80%ED%95%9C%EC%83%9D%EA%B0%81/" rel="alternate" type="text/html" title="운영서버 배포에 대한 나의 생각" /><published>2019-05-10T00:00:00+09:00</published><updated>2019-05-10T00:00:00+09:00</updated><id>http://localhost:4000/think/%EC%9A%B4%EC%98%81%EB%B0%B0%ED%8F%AC%EC%97%90-%EB%8C%80%ED%95%9C%EC%83%9D%EA%B0%81</id><content type="html" xml:base="http://localhost:4000/think/2019-05-10-%EC%9A%B4%EC%98%81%EB%B0%B0%ED%8F%AC%EC%97%90-%EB%8C%80%ED%95%9C%EC%83%9D%EA%B0%81/">&lt;p&gt;운영 배포에 대한 생각&lt;/p&gt;
 
 &lt;h2 id=&quot;운영서버-배포에-대한-나의-생각&quot;&gt;운영서버 배포에 대한 나의 생각&lt;/h2&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1.안전 하게 배포가 되어야한다. 
