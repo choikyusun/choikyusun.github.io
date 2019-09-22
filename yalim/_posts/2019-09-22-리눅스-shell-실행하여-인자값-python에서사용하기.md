@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 리눅스 shell 스크립트 활용 하여 받은 인자값 python에 넘겨 실행하기 
+title: 리눅스 shell 스크립트 실행 python 실행시 인자값 포함 실행하기 
 description: > 
 ---
 
